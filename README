@@ -1,4 +1,3 @@
-
 Silverlight Chat
 
 + Full-duplex TCP/IP concept demo. ("PollingDuplex")
@@ -16,6 +15,11 @@ Technology stack:
 + WCF service ("PollingDuplex")
 + Silverlight 5 client
   
+Setup:
+1. Use Visual Studio 11 (RC)
+2. From WCFHost project properties create virtual dir to IIS.
+That's it.
+
 Project structure (the interesting ones):
 
  Servere side:
