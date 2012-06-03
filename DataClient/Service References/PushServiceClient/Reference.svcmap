@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1ddf18ff-5ec0-4afe-94a4-4366d1357142" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/WCFHost/PushService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PushService2.xsd" MetadataType="Schema" ID="0fee1c3c-a079-438f-8890-d4e4ac3ba8e2" SourceId="1" SourceUrl="http://localhost/WCFHost/PushService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PushService3.xsd" MetadataType="Schema" ID="f9e445ac-0109-496f-8c1d-6c04f39e7e22" SourceId="1" SourceUrl="http://localhost/WCFHost/PushService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PushService.disco" MetadataType="Disco" ID="5721f08e-bec7-444a-a7d2-d396ca4f82fb" SourceId="1" SourceUrl="http://localhost/WCFHost/PushService.svc?disco" />
+    <MetadataFile FileName="PushService.xsd" MetadataType="Schema" ID="3356f611-ce7b-4b5f-871b-29abb7d89216" SourceId="1" SourceUrl="http://localhost/WCFHost/PushService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PushService.wsdl" MetadataType="Wsdl" ID="da0b13ff-a702-4204-83a9-9d00b7a2b80d" SourceId="1" SourceUrl="http://localhost/WCFHost/PushService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PushService1.xsd" MetadataType="Schema" ID="e0dae959-5ab7-4504-82bf-10d25b9e19d5" SourceId="1" SourceUrl="http://localhost/WCFHost/PushService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PushServiceServer.wsdl" MetadataType="Wsdl" ID="041b27d2-386e-43bc-b0ff-a4c0e344c008" SourceId="1" SourceUrl="http://localhost/WCFHost/PushService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

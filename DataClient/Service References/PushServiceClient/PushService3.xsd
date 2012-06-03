@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFHost" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFHost" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PushMessage">
+    <xs:sequence>
+      <xs:element name="_tag" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PushMessage" nillable="true" type="tns:PushMessage" />
+  <xs:complexType name="PushMessage.SystemMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PushMessage">
+        <xs:sequence>
+          <xs:element name="item" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PushMessage.SystemMessage" nillable="true" type="tns:PushMessage.SystemMessage" />
+  <xs:complexType name="PushMessage.UserMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PushMessage">
+        <xs:sequence>
+          <xs:element name="item1" nillable="true" type="xs:string" />
+          <xs:element name="item2" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PushMessage.UserMessage" nillable="true" type="tns:PushMessage.UserMessage" />
+  <xs:complexType name="PushMessage.UserJoin">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PushMessage">
+        <xs:sequence>
+          <xs:element name="item" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PushMessage.UserJoin" nillable="true" type="tns:PushMessage.UserJoin" />
+  <xs:complexType name="PushMessage.UserPart">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PushMessage">
+        <xs:sequence>
+          <xs:element name="item" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PushMessage.UserPart" nillable="true" type="tns:PushMessage.UserPart" />
+</xs:schema>

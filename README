@@ -1,0 +1,41 @@
+
+Silverlight Chat
+
++ Full-duplex TCP/IP concept demo. ("PollingDuplex")
++ Publish/Subscribe -pattern: Client registers to server and server sends (push based) events from other users.
++ Almost real-time communication with other users (/Silverlight clients)!
++ Database could be made, but it is optional: Now the server just forwards (/filters) the client messages to other clients.
+
+This is chat as a concept demo. The same concept could be used as for example multiplayer game (/multiuser software like Google Wave/Docs) with high interaction level between users. (Silverlight 5 works on Facebook, Windows Phone, ...) We could have one or many servers per user, so the user load could be distributed (eg. by location, game board coordinates, etc).
+
+Development tool: Visual Studio 2012 RC. Plugins: None.
+IIS is used as host. I haven't tried with others. WCF Serialization in binary mode, can be read with Fiddler2.
+
+Technology stack:
++ F# as main language
++ WCF service ("PollingDuplex")
++ Silverlight 5 client
+  
+Project structure (the interesting ones):
+
+ Servere side:
+  - WCFHost: (IIS VDir)
+    + PushService.svc WCF WebService host
+    + Chat.html: Silverlight host HTML page
+    + Web.Config: Some configs
+  - ServiceLogics:
+    + StreamClient.fs: Interface for push messages from server to client
+    + PushService.svc.fs: WebService logics, interface for client to call server
+ Client side:
+  - DataClient
+    + Generated service reference
+  - ClientLogics:
+    + Commands.fs: Silverlight ICommands
+    + ClientViewModel.fs: Client side ViewModel for UI
+  - SLClient:
+    + MainPage.xaml: Silverlight UI
+	
+References / similar stuff:
+ - http://msdn.microsoft.com/en-us/library/cc645027(v=vs.95).aspx
+ - http://www.c-sharpcorner.com/uploadfile/pchandraker/http-duplex-messaging-in-silverlight-4/
+ - http://weblogs.asp.net/dwahlin/archive/2011/02/06/syncing-data-with-a-server-using-silverlight-and-http-polling-duplex.aspx

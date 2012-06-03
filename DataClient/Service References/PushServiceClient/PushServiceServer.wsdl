@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://localhost/WCFHost/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PushService" targetNamespace="http://localhost/WCFHost/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://localhost/WCFHost/PushService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost/WCFHost/Imports">
+      <xsd:import schemaLocation="http://localhost/WCFHost/PushService.svc?xsd=xsd0" namespace="http://localhost/WCFHost/" />
+      <xsd:import schemaLocation="http://localhost/WCFHost/PushService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/WCFHost/PushService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/WCFHost/PushService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCFHost" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PushService_SendMessageToAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageToAll" />
+  </wsdl:message>
+  <wsdl:message name="PushService_SendMessageTo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageTo" />
+  </wsdl:message>
+  <wsdl:message name="PushService_RegisterToObserve_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterToObserve" />
+  </wsdl:message>
+  <wsdl:message name="PushService_ReceiveUserList_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveUserList" />
+  </wsdl:message>
+  <wsdl:message name="PushService_ReceiveStream_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveStream" />
+  </wsdl:message>
+  <wsdl:portType name="PushService">
+    <wsdl:operation name="SendMessageToAll">
+      <wsdl:input wsaw:Action="http://localhost/WCFHost/PushService/SendMessageToAll" message="tns:PushService_SendMessageToAll_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageTo">
+      <wsdl:input wsaw:Action="http://localhost/WCFHost/PushService/SendMessageTo" message="tns:PushService_SendMessageTo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterToObserve">
+      <wsdl:input wsaw:Action="http://localhost/WCFHost/PushService/RegisterToObserve" message="tns:PushService_RegisterToObserve_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveUserList">
+      <wsdl:output wsaw:Action="http://localhost/WCFHost/PushService/ReceiveUserList" message="tns:PushService_ReceiveUserList_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveStream">
+      <wsdl:output wsaw:Action="http://localhost/WCFHost/PushService/ReceiveStream" message="tns:PushService_ReceiveStream_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="PushService">
+    <wsdl:port name="CustomBinding_PushService" binding="i0:CustomBinding_PushService">
+      <soap12:address location="http://localhost/WCFHost/PushService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost/WCFHost/PushService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
