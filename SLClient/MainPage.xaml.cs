@@ -5,12 +5,10 @@ namespace SLClient
 {
     public partial class MainPage : UserControl
     {
-        ClientViewModel vm;
- 
         public MainPage()
         {
             InitializeComponent();
-            this.DataContext = vm = new ClientViewModel();
+            this.DataContext = new ClientViewModel();
         }
     }
 }
