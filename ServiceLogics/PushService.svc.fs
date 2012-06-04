@@ -68,9 +68,9 @@ type PushService() =
 
     /// End connection
     let disconnect user =
+        clientCallbacks.Remove(user) |> ignore
+        let _,name,_ = user
         try 
-            clientCallbacks.Remove(user) |> ignore
-            let _,name,_ = user
             clientCallbacks |> notifyClients (UserPart(name))
             clientCallbacks |> notifyClients (SystemMessage(name + " disconnected!"))
         with
