@@ -7,17 +7,21 @@ Silverlight Chat
 
 This is chat as a concept demo. The same concept could be used as for example multiplayer game (/multiuser software like Google Wave/Docs) with high interaction level between users. (Silverlight 5 works on Facebook, Windows Phone, ...) We could have one or many servers per user, so the user load could be distributed (eg. by location, game board coordinates, etc).
 
-Development tool: Visual Studio 2012 RC. Plugins: None.
+Development tool: Visual Studio 2012 RC (with Silverlight 5 SDK). Plugins: None.
 IIS is used as host. I haven't tried with others. WCF Serialization in binary mode, can be read with Fiddler2.
 
 Technology stack:
-+ F# as main language
-+ WCF service ("PollingDuplex")
++ F# (FSharp) as main language
++ WCF WebService ("PollingDuplex")
 + Silverlight 5 client
+
+This is quite much like the WebSocket concept which would propably work with the same source code, but different web.config for WCF service, but needs (Win8 based) IIS 8.
   
 Setup:
-1. Use Visual Studio 11 (RC)
-2. From WCFHost project properties create virtual dir to IIS.
+1. Use Visual Studio 11 (RC) and have Silverlight 5 SDK
+2. Set the WCFHost as start up project 
+3. You may have to refererence FSharp core dll again (if you have a different version) 
+4. From WCFHost project properties create virtual dir to IIS.
 That's it.
 
 Project structure (the interesting ones):
